@@ -8,7 +8,7 @@ import (
 	"github.com/ipfs/kubo/repo"
 	"github.com/ipfs/kubo/repo/fsrepo"
 
-	levelds "github.com/ipfs/go-ds-leveldb"
+	levelds "github.com/IPFSR/go-ds-leveldb-sia"
 	ldbopts "github.com/syndtr/goleveldb/leveldb/opt"
 )
 
