@@ -227,10 +227,6 @@ func (api *HttpApi) Object() iface.ObjectAPI {
 	return (*ObjectAPI)(api)
 }
 
-func (api *HttpApi) Dht() iface.DhtAPI {
-	return (*DhtAPI)(api)
-}
-
 func (api *HttpApi) Swarm() iface.SwarmAPI {
 	return (*SwarmAPI)(api)
 }

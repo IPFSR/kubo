@@ -762,11 +762,15 @@ Type: `flag`
 
 ### `Gateway.ExposeRoutingAPI`
 
-An optional flag to expose Kubo `Routing` system on the gateway port as a [Routing
-V1](https://specs.ipfs.tech/routing/routing-v1/) endpoint.  This only affects your
-local gateway, at `127.0.0.1`.
+An optional flag to expose Kubo `Routing` system on the gateway port
+as an [HTTP `/routing/v1`](https://specs.ipfs.tech/routing/http-routing-v1/) endpoint on `127.0.0.1`.
+Use reverse proxy to expose it on a different hostname.
 
-This endpoint can be used by other Kubo instance, as illustrated in [`delegated_routing_v1_http_proxy_test.go`](https://github.com/ipfs/kubo/blob/master/test/cli/delegated_routing_v1_http_proxy_test.go).
+This endpoint can be used by other Kubo instances, as illustrated in
+[`delegated_routing_v1_http_proxy_test.go`](https://github.com/ipfs/kubo/blob/master/test/cli/delegated_routing_v1_http_proxy_test.go).
+Kubo will filter out routing results which are not actionable, for example, all
+graphsync providers will be skipped. If you need a generic pass-through, see
+standalone router implementation named [someguy](https://github.com/ipfs/someguy).
 
 Default: `false`
 
@@ -1549,10 +1553,12 @@ To force a specific Amino DHT-only mode, client or server, set `Routing.Type` to
 unless you're sure your node is reachable from the public network.
 
 When `Routing.Type` is set to `auto` or `autoclient` your node will accelerate some types of routing
-by leveraging HTTP endpoints compatible with [IPIP-337](https://github.com/ipfs/specs/pull/337)
-in addition to the IPFS DHT.
+by leveraging HTTP endpoints compatible with [Delegated Routing V1 HTTP API](https://specs.ipfs.tech/routing/http-routing-v1/)
+introduced in [IPIP-337](https://github.com/ipfs/specs/pull/337)
+in addition to the Amino DHT.
 By default, an instance of [IPNI](https://github.com/ipni/specs/blob/main/IPNI.md#readme)
 at https://cid.contact is used.
+
 Alternative routing rules can be configured in `Routing.Routers` after setting `Routing.Type` to `custom`.
 
 Default: `auto` (DHT + IPNI)

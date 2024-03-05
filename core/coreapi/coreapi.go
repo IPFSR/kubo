@@ -130,11 +130,6 @@ func (api *CoreAPI) Pin() coreiface.PinAPI {
 	return (*PinAPI)(api)
 }
 
-// Dht returns the DhtAPI interface implementation backed by the go-ipfs node
-func (api *CoreAPI) Dht() coreiface.DhtAPI {
-	return (*DhtAPI)(api)
-}
-
 // Swarm returns the SwarmAPI interface implementation backed by the go-ipfs node
 func (api *CoreAPI) Swarm() coreiface.SwarmAPI {
 	return (*SwarmAPI)(api)
