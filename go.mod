@@ -3,7 +3,8 @@ module github.com/ipfs/kubo
 require (
 	bazil.org/fuse v0.0.0-20200117225306-7b5117fecadc
 	contrib.go.opencensus.io/exporter/prometheus v0.4.2
-	github.com/IPFSR/sia-ds v0.0.0-20240124065859-e334ef1153da
+	github.com/IPFSR/go-ds-leveldb-sia v0.0.0-20240305093608-b67220d2ecf4
+	github.com/IPFSR/sia-ds v0.0.0-20240127025452-f43ff1d8d549
 	github.com/benbjohnson/clock v1.3.5
 	github.com/blang/semver/v4 v4.0.0
 	github.com/cenkalti/backoff/v4 v4.2.1
@@ -25,7 +26,6 @@ require (
 	github.com/ipfs/go-datastore v0.6.0
 	github.com/ipfs/go-detect-race v0.0.1
 	github.com/ipfs/go-ds-badger v0.3.0
-	github.com/ipfs/go-ds-leveldb v0.5.0
 	github.com/ipfs/go-ds-measure v0.2.0
 	github.com/ipfs/go-fs-lock v0.0.7
 	github.com/ipfs/go-ipfs-cmds v0.10.0
@@ -250,7 +250,7 @@ require (
 	go.sia.tech/core v0.1.12-0.20231211182757-77190f04f90b // indirect
 	go.sia.tech/jape v0.11.1 // indirect
 	go.sia.tech/mux v1.2.0 // indirect
-	go.sia.tech/renterd v1.0.1 // indirect
+	go.sia.tech/renterd v1.0.2 // indirect
 	go.sia.tech/siad v1.5.10-0.20230228235644-3059c0b930ca // indirect
 	go.uber.org/atomic v1.11.0 // indirect
 	go.uber.org/mock v0.4.0 // indirect
