@@ -8,7 +8,7 @@ import (
 	"github.com/ipfs/kubo/repo"
 	"github.com/ipfs/kubo/repo/fsrepo"
 
-	flatfs "github.com/ipfs/go-ds-flatfs"
+	flatfs "github.com/IPFSR/sia-ds"
 )
 
 // Plugins is exported list of plugins that will be loaded.
